@@ -30,26 +30,45 @@ public class AnimalKingdomDriver {
 
             System.out.println("\n\n***** Here are just the mammals. (4 animals printed)");
             for(Animal animal : animalList) {
-                // YOUR CODE HERE
+                if (animal instanceof Mammal) {
+                    System.out.println(animal);
+                }
             }
 
             System.out.println("\n\n***** Here are the winged animals along with information about whether they can fly.  (3 animals printed)");
             for(Animal animal : animalList) {
-                // YOUR CODE HERE
+                if (animal instanceof Winged) {
+                    Winged wAnimal = (Winged) animal;
+                    if (wAnimal.canFly()) {
+                        System.out.println(animal + "\tCan Fly");
+                    } else {
+                        System.out.println(animal + "\tCannot Fly");
+                    }
+                }
             }
 
             System.out.println("\n\n***** Here are the adoptable animals along with their care directions.  (4 animals printed)");
             for(Animal animal : animalList) {
-                // YOUR CODE HERE
+                if (animal instanceof Adoptable) {
+                    Adoptable aAnimal = (Adoptable) animal;
+                    System.out.println(animal + "\t" + aAnimal.homeCareDirections());
+                }
             }
 
 
             System.out.println("\n\n***** Here are the animals that can dwell in water, along with whether they can also live on land.  (4 animals printed)");
             for(Animal animal : animalList) {
-                // YOUR CODE HERE
+                if (animal instanceof WaterDweller) {
+                    WaterDweller wDAnimal = (WaterDweller) animal;
+                    if (wDAnimal.canLiveOutOfWater() == true){
+                        System.out.println(animal + "\tCan also live on land");
+                    } else {
+                        System.out.println(animal + "\tCannot also live on land");
+                    }
+                }
             }
 
 
         }
-    }
 }
+

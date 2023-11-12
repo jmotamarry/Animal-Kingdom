@@ -2,8 +2,11 @@ public abstract class Animal {
     private String name;
 
     public abstract boolean isWarmBlooded();
-    public abstract String toString();
-    public abstract boolean equals();
+    public abstract boolean equals(Animal a);
+
+    public String toString() {
+        return "Animal Name: " + getName();
+    }
 
     public String getName() {
         return name;
